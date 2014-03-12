@@ -20,7 +20,7 @@ class HomeController < ApplicationController
       new_log = LogDatum.new
       new_log.session = a['session']
       new_log.event = a['event']
-      new_log.time = a['time']%1000
+      new_log.time = a['time']
       new_log.timeDrift = a['timeDrift']
   		new_log.save
   		@count = @count + 1
