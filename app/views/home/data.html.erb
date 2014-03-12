@@ -1,0 +1,41 @@
+<h1>Data</h1>
+
+---------------------------------
+
+<h2> Delete all Data in Database</h2>
+
+<%= form_tag '/home/delete_all_data' do %>
+    <div><%= submit_tag 'Delete' %></div>
+<% end %>
+
+---------------------------------
+
+<h2> Listing Data </h2>
+
+<table border='1'>
+  <thead>
+    <tr>
+      <th>Session</th>
+      <th>Time</th>
+      <th>Timedrift</th>
+      <th>Event</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_data.each do |log_datum| %>
+      <tr>
+        <td><%= log_datum.session %></td>
+        <td><%= log_datum.time %></td>
+        <td><%= log_datum.timeDrift %></td>
+        <td><%= log_datum.event %></td>
+        <td><%= link_to 'Edit', edit_log_datum_path(log_datum) %></td>
+        <td><%= link_to 'Destroy', log_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,18 @@
+<h1>Index</h1>
+
+<%= form_tag '/home/post_data' do %>
+    <%= label_tag 'data' %>
+    <br>
+    <%= text_area_tag 'data'%>
+    <div><%= submit_tag 'Submit' %></div>
+<% end %>
+
+
+
+<h3> Updates </h3>
+
+Data : <%= @data %>
+
+<br><hr>
+
+Count : <%= @count %>

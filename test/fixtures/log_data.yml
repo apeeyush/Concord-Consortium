@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session: MyString
+  time: 2014-03-12 01:11:02
+  timeDrift: 1
+  event: MyString
+
+two:
+  session: MyString
+  time: 2014-03-12 01:11:02
+  timeDrift: 1
+  event: MyString

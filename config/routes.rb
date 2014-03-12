@@ -1,4 +1,14 @@
 Demo::Application.routes.draw do
+  resources :log_data
+
+  get "home/index", to: 'home#index', as: 'home'
+  get "home/data", to: 'home#data', as: 'data'
+  get "home/analysis", to: 'home#analysis', as: 'analysis'
+  get "home/about", to: 'home#about', as: 'about'
+  post "home/post_data"
+  post "home/delete_all_data"
+  root 'home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

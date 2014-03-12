@@ -1,0 +1,33 @@
+<h1>Listing log_data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Session</th>
+      <th>Time</th>
+      <th>Timedrift</th>
+      <th>Event</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_data.each do |log_datum| %>
+      <tr>
+        <td><%= log_datum.session %></td>
+        <td><%= log_datum.time %></td>
+        <td><%= log_datum.timeDrift %></td>
+        <td><%= log_datum.event %></td>
+        <td><%= link_to 'Show', log_datum %></td>
+        <td><%= link_to 'Edit', edit_log_datum_path(log_datum) %></td>
+        <td><%= link_to 'Destroy', log_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log datum', new_log_datum_path %>
