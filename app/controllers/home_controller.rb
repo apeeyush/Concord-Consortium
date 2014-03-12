@@ -5,7 +5,9 @@ class HomeController < ApplicationController
   end
 
   def data
-  	@log_data=LogDatum.all
+    if @log_data == nil
+  	  @log_data=LogDatum.all
+    end
   end
 
   def post_data
@@ -38,5 +40,15 @@ class HomeController < ApplicationController
       LogDatum.destroy_all
     end
     render action: "index"
+  end
+
+  def started_challenge
+    @log_data = LogDatum.where("event='Started challenge'")
+    render action: "data"
+  end
+
+  def spent_time
+    @log_data = LogDatum.where("event='User logged in' or event='User logged out'").order(:session)
+    render action: "data"
   end
 end

@@ -7,6 +7,8 @@ Demo::Application.routes.draw do
   get "home/about", to: 'home#about', as: 'about'
   post "home/post_data"
   post "home/delete_all_data"
+  post "home/started_challenge"
+  post "home/spent_time"
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
