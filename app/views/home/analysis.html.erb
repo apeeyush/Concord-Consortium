@@ -6,3 +6,11 @@
 <br>
 
 <%= link_to "Analyse" , 'spent_time' , method: :post %> time spent by different users
+
+<br> <br>
+
+<h3> List of All Events present in Database </h3>
+
+<% @uniq_events.each do |uniq_event| %>
+	<%= uniq_event %> <br>
+<% end %>

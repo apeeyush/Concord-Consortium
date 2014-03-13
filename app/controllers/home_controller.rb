@@ -30,6 +30,7 @@ class HomeController < ApplicationController
   end
 
   def analysis
+    @uniq_events = LogDatum.uniq.pluck(:event)
   end
 
   def about
