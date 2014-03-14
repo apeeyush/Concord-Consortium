@@ -1,5 +1,8 @@
 <h1>Index</h1>
 
+<br>
+
+<h3> Enter additional data to be loaded in the database in the box below </h3>
 <%= form_tag '/home/post_data' do %>
     <%= label_tag 'data' %>
     <br>
@@ -9,9 +12,23 @@
 
 <br><hr>
 
-<h3> Updates (Used for Debugging) </h3>
+<h3> Updates </h3>
 
-Data : <%= @data %>
+<%= @update %>
+
+<br><hr>
+
+<h3> Sample Data you can try entering</h3>
+
+<p>
+[{"session":"a24186c2-5536-1734-42cc-3eb50e625964","time":1392862093110,"prettyTime":"Wed Feb 19 2014 21:08:13 GMT-0500 (EST)","timeDrift":0,"event":"Started session"},{"session":"a24186c2-5536-1734-42cc-3eb50e625964","time":1392844105595,"prettyTime":"Wed Feb 19 2014 16:08:25 GMT-0500 (EST)","timeDrift":-18000293.5,"event":"User logged in","parameters":{"username":"s1group1","firstName":"student","lastName":"1group1","className":"dragon"}},{"session":"71ffa2dc-ffec-9276-063f-82cd4bd43c70","time":1392844138219,"prettyTime":"Wed Feb 19 2014 16:08:58 GMT-0500 (EST)","timeDrift":-18000402.5,"event":"User logged in","parameters":{"username":"s1group1","firstName":"student","lastName":"1group1","className":"dragon"}},{"session":"71ffa2dc-ffec-9276-063f-82cd4bd43c70","time":1392862136734,"prettyTime":"Wed Feb 19 2014 21:08:56 GMT-0500 (EST)","timeDrift":0,"event":"Started session"},{"session":"6f3fe618-b934-a66a-aae4-5193d9106535","time":1392862145281,"prettyTime":"Wed Feb 19 2014 21:09:05 GMT-0500 (EST)","timeDrift":0,"event":"Started session"},{"session":"6f3fe618-b934-a66a-aae4-5193d9106535","time":1392844147075,"prettyTime":"Wed Feb 19 2014 16:09:07 GMT-0500 (EST)","timeDrift":-18000245,"event":"Moved to","parameters":{"title":"Office"}},{"session":"6f3fe618-b934-a66a-aae4-5193d9106535","time":1392844147067,"prettyTime":"Wed Feb 19 2014 16:09:07 GMT-0500 (EST)","timeDrift":-18000245,"event":"User logged in","parameters":{"username":"s1group1","firstName":"student","lastName":"1group1","className":"dragon"}},{"session":"6f3fe618-b934-a66a-aae4-5193d9106535","time":1392844150345,"prettyTime":"Wed Feb 19 2014 16:09:10 GMT-0500 (EST)","timeDrift":-18000245,"event":"User logged out"},{"session":"6f3fe618-b934-a66a-aae4-5193d9106535","time":1392844150346,"prettyTime":"Wed Feb 19 2014 16:09:10 GMT-0500 (EST)","timeDrift":-18000245,"event":"Ended session"},{"session":"277515ea-7433-e097-48c5-ece5f9753303","time":1392908888831,"prettyTime":"Thu Feb 20 2014 10:08:08 GMT-0500 (EST)","timeDrift":-18005801.5,"event":"Started session"},{"session":"277515ea-7433-e097-48c5-ece5f9753303","time":1392908888831,"prettyTime":"Thu Feb 20 2014 10:08:08 GMT-0500 (EST)","timeDrift":-18005801.5,"event":"User logged in","parameters":{"username":"s1group1","firstName":"student","lastName":"1group1","className":"dragon"}},{"session":"277515ea-7433-e097-48c5-ece5f9753303","time":1392908892346,"prettyTime":"Thu Feb 20 2014 10:08:12 GMT-0500 (EST)","timeDrift":-18005801.5,"event":"Moved to","parameters":{"title":"Case Log"}},{"session":"277515ea-7433-e097-48c5-ece5f9753303","time":1392908896382,"prettyTime":"Thu Feb 20 2014 10:08:16 GMT-0500 (EST)","timeDrift":-18005801.5,"event":"Moved to","parameters":{"title":"Case 2: Challenge 1"}},{"session":"277515ea-7433-e097-48c5-ece5f9753303","time":1392908896382,"prettyTime":"Thu Feb 20 2014 10:08:16 GMT-0500 (EST)","timeDrift":-18005801.5,"event":"Started challenge","parameters":{"title":"Case 2: Challenge 1","route":"case2/challenge1","case":1,"challenge":2}},{"session":"277515ea-7433-e097-48c5-ece5f9753303","time":1392908896601,"prettyTime":"Thu Feb 20 2014 10:08:16 GMT-0500 (EST)","timeDrift":-18005801.5,"event":"Opened info"},{"session":"277515ea-7433-e097-48c5-ece5f9753303","time":1392908898233,"prettyTime":"Thu Feb 20 2014 10:08:18 GMT-0500 (EST)","timeDrift":-18005801.5,"event":"Closed info"}]</p>
+
+
+<hr>
+
+<h3> Additional Updates </h3>
+
+Data Entered : <%= @data %>
 
 <br>
 

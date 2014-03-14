@@ -10,22 +10,28 @@ class HomeController < ApplicationController
     end
   end
 
+  def group_view
+    @log_data = LogDatum.order(:session)
+  end
+
   def post_data
     data = params[:data]
     @data = data
     @count = 0
 	  array = JSON.parse(data)
     ActiveRecord::Base.transaction do
-    array.each do |a|
-      new_log = LogDatum.new
-      new_log.session = a['session']
-      new_log.event = a['event']
-      new_log.time = a['time']
-      new_log.timeDrift = a['timeDrift']
-  		new_log.save
-  		@count = @count + 1
-	  end
-  end
+      array.each do |a|
+        new_log = LogDatum.new
+        new_log.session = a['session']
+        new_log.event = a['event']
+        new_log.time = a['time']
+        new_log.timeDrift = a['timeDrift']
+        if new_log.save
+          @update = "Data Entered Successfully!"
+        end
+  		  @count = @count + 1
+	    end
+    end
     render action: "index"
   end
 
@@ -52,4 +58,5 @@ class HomeController < ApplicationController
     @log_data = LogDatum.where("event='User logged in' or event='User logged out'").order(:session)
     render action: "data"
   end
+
 end

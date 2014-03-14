@@ -1,0 +1,54 @@
+<h2> Listing Data Grouped according to session</h2>
+<p> It lists data grouped according to session. Same session events are listed together and different sessions are separated by -- </p>
+
+<table BORDER=1 CELLPADDING=3 CELLSPACING=1 
+    RULES=COLS FRAME=BOX>
+  <thead>
+    <tr>
+      <th>Session</th>
+      <th>Time</th>
+      <th>Timedrift</th>
+      <th>Event</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% log_datum_prev = @log_data[0] %>
+    <% @log_data.each do |log_datum| %>
+      <% if log_datum_prev.session == log_datum.session %>
+        <tr>
+          <td><%= log_datum.session %></td>
+          <td><%= log_datum.time %></td>
+          <td><%= log_datum.timeDrift %></td>
+          <td><%= log_datum.event %></td>
+          <td><%= link_to 'Edit', edit_log_datum_path(log_datum) %></td>
+          <td><%= link_to 'Destroy', log_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <td>--------------------------------------</td>
+          <td>----------</td>
+          <td>----------</td>
+          <td>----------</td>
+          <td>----------</td>
+          <td>----------</td>
+
+        </tr>
+
+        <tr>
+          <td><%= log_datum.session %></td>
+          <td><%= log_datum.time %></td>
+          <td><%= log_datum.timeDrift %></td>
+          <td><%= log_datum.event %></td>
+          <td><%= link_to 'Edit', edit_log_datum_path(log_datum) %></td>
+          <td><%= link_to 'Destroy', log_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      <% log_datum_prev = log_datum %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

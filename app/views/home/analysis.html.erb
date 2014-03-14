@@ -7,10 +7,14 @@
 
 <%= link_to "Analyse" , 'spent_time' , method: :post %> time spent by different users
 
+<br>
+
+<%= link_to "View" , 'group_view' %> same session events together
+
 <br> <br>
 
 <h3> List of All Events present in Database </h3>
-
+<p> This list is generated based on distinct events currently present in database. </p>
 <% @uniq_events.each do |uniq_event| %>
 	<%= uniq_event %> <br>
 <% end %>

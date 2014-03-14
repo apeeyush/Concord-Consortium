@@ -5,6 +5,7 @@ Demo::Application.routes.draw do
   get "home/data", to: 'home#data', as: 'data'
   get "home/analysis", to: 'home#analysis', as: 'analysis'
   get "home/about", to: 'home#about', as: 'about'
+  get "home/group_view", to: 'home#group_view', as:'group_view'
   post "home/post_data"
   post "home/delete_all_data"
   post "home/started_challenge"
