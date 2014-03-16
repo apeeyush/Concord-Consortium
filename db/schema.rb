@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316154623) do
+ActiveRecord::Schema.define(version: 20140316170541) do
 
   create_table "log_data", force: true do |t|
     t.string   "session"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140316154623) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "parameters", limit: 1000
+    t.string   "prettyTime", limit: 50
   end
 
 end
