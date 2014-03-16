@@ -59,7 +59,7 @@ class HomeController < ApplicationController
   end
 
   def spent_time
-    @log_data = LogDatum.where("event='User logged in' or event='User logged out'").order(:session)
+    @log_data = LogDatum.where("event='User logged in' or event='User logged out'").order(:time).order(:session)
     render action: "data"
   end
 

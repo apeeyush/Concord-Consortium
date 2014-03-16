@@ -13,7 +13,7 @@
 
 <h2> Listing Data </h2>
 
-<table border='1'>
+<table class = 'hovertable'>
   <thead>
     <tr>
       <th>Session</th>
@@ -26,12 +26,12 @@
 
   <tbody>
     <% @log_data.each do |log_datum| %>
-      <tr>
-        <td><%= log_datum.session %></td>
+      <tr onmouseover="this.style.backgroundColor='#ECEEF6';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+        <td><font size="1"><%= log_datum.session %></font></td>
         <td><%= log_datum.time %></td>
-        <td><%= log_datum.timeDrift %></td>
+        <td><font size="1"><%= log_datum.timeDrift %></font></td>
         <td><%= log_datum.event %></td>
-        <td><%= log_datum.parameters %></td>
+        <td><font size="1"><%= log_datum.parameters %></font></td>
       </tr>
     <% end %>
   </tbody>

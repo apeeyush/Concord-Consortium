@@ -9,41 +9,45 @@
       <th>Time</th>
       <th>Timedrift</th>
       <th>Event</th>
-      <th>Edit</th>
-      <th>Destroy</th>
+      <th>Parameters</th>
     </tr>
   </thead>
 
   <tbody>
     <% log_datum_prev = @log_data[0] %>
+    <tr>
+      <td><hr></td>
+      <td><hr></td>
+      <td><hr></td>
+      <td><hr></td>
+      <td><hr></td>
+
+    </tr>
     <% @log_data.each do |log_datum| %>
       <% if log_datum_prev.session == log_datum.session %>
         <tr>
-          <td><%= log_datum.session %></td>
+          <td><font size="1"><%= log_datum.session %></font></td>
           <td><%= log_datum.time %></td>
-          <td><%= log_datum.timeDrift %></td>
+          <td><font size="1"><%= log_datum.timeDrift %></font></td>
           <td><%= log_datum.event %></td>
-          <td><%= link_to 'Edit', edit_log_datum_path(log_datum) %></td>
-          <td><%= link_to 'Destroy', log_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><font size="1"><%= log_datum.parameters %></font></td>
         </tr>
       <% else %>
         <tr>
-          <td>--------------------------------------</td>
-          <td>----------</td>
-          <td>----------</td>
-          <td>----------</td>
-          <td>----------</td>
-          <td>----------</td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
 
         </tr>
 
         <tr>
-          <td><%= log_datum.session %></td>
+          <td><font size="1"><%= log_datum.session %></font></td>
           <td><%= log_datum.time %></td>
-          <td><%= log_datum.timeDrift %></td>
+          <td><font size="1"><%= log_datum.timeDrift %></font></td>
           <td><%= log_datum.event %></td>
-          <td><%= link_to 'Edit', edit_log_datum_path(log_datum) %></td>
-          <td><%= link_to 'Destroy', log_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><font size="1"><%= log_datum.parameters %></font></td>
         </tr>
       <% end %>
       <% log_datum_prev = log_datum %>
