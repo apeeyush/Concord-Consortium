@@ -27,8 +27,7 @@ class HomeController < ApplicationController
         new_log.event = a['event']
         new_log.time = a['time']
         new_log.timeDrift = a['timeDrift']
-        s = a['time'].to_i/1000
-        new_log.prettyTime = DateTime.strptime("#{s}",'%s').in_time_zone("Eastern Time (US & Canada)").to_s
+        new_log.prettyTime = DateTime.strptime("#{a['time'].to_i/1000}",'%s').in_time_zone("Eastern Time (US & Canada)").to_s
         new_log.parameters = a['parameters'].to_s
         if new_log.save
           @update = "Data Entered Successfully!"
