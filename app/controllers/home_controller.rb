@@ -1,4 +1,5 @@
 require 'json'
+require 'time'
 
 class HomeController < ApplicationController
   def index
@@ -8,10 +9,12 @@ class HomeController < ApplicationController
     if @log_data == nil
   	  @log_data=LogDatum.all
     end
+#    DateTime.strptime("#{s}",'%s').in_time_zone("Eastern Time (US & Canada)"
+#    s = log_datum.time/1000
   end
 
   def group_view
-    @log_data = LogDatum.order(:session)
+    @log_data = LogDatum.order(:time).order(:session)
   end
 
   def post_data
@@ -26,6 +29,7 @@ class HomeController < ApplicationController
         new_log.event = a['event']
         new_log.time = a['time']
         new_log.timeDrift = a['timeDrift']
+        new_log.parameters = a['parameters'].to_s
         if new_log.save
           @update = "Data Entered Successfully!"
         end
