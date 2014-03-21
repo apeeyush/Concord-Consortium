@@ -1,20 +1,31 @@
 <h1>Analysis</h1>
 <p>This contains some of the transformations the researcher might be interested in.</p>
 
-<%= link_to "Analyse" , 'started_challenge' , method: :post %> Started Challenge data
+<%= link_to "View" , 'started_challenge' , method: :post %> data with event Started Challenge.
 
 <br>
 
-<%= link_to "Analyse" , 'spent_time' , method: :post %> time spent by different users
+<%= link_to "View" , 'spent_time' , method: :post %> time spent by different users [Those sessions where we have both log-out time as well as log-in time].
 
 <br>
 
-<%= link_to "View" , 'group_view' %> same session events together
+<%= link_to "View" , 'group_view' %> same session events together sorted by time.
 
-<br> <br>
+<br> <hr>
 
 <h3> List of All Events present in Database </h3>
 <p> This list is generated based on distinct events currently present in database. </p>
-<% @uniq_events.each do |uniq_event| %>
-	<%= uniq_event %> <br>
-<% end %>
+<table class = 'hovertable'>
+	<thead>
+		<tr>
+			<th>List of events</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @uniq_events.each do |uniq_event| %>
+			<tr onmouseover="this.style.backgroundColor='#ECEEF6';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+				<td><%= uniq_event %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
